@@ -12,8 +12,15 @@ namespace CountingBetweenTwoDays.Tests
         [TestMethod()]
         public void GetWeekNumberOfMonthTest()
         {
-            int actualResult = DateTimeExtensions.GetWeekNumberOfMonth(new DateTime(2021, 2, 12));
+            //Second Tue
+            int actualResult = DateTimeExtensions.GetWeekNumberOfMonth(new DateTime(2021, 6, 8));
             int expectedResult = 2;
+            Assert.AreEqual(expectedResult, actualResult);
+
+            //Second Fri
+            Assert.AreEqual(expectedResult, actualResult);
+            actualResult = DateTimeExtensions.GetWeekNumberOfMonth(new DateTime(2021, 2, 12));
+            expectedResult = 2;
 
             Assert.AreEqual(expectedResult, actualResult);
 
@@ -23,9 +30,9 @@ namespace CountingBetweenTwoDays.Tests
 
             Assert.AreEqual(expectedResult, actualResult);
 
-            //Second Friday
-            actualResult = DateTimeExtensions.GetWeekNumberOfMonth(new DateTime(2021, 6, 8));
-            expectedResult = 2;
+            //First MOnday = FirstDate
+            actualResult = DateTimeExtensions.GetWeekNumberOfMonth(new DateTime(2021, 3, 2));
+            expectedResult = 1;
 
             Assert.AreEqual(expectedResult, actualResult);
         }

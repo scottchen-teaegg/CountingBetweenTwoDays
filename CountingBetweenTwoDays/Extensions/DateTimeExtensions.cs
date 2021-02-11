@@ -71,12 +71,20 @@ namespace CountingBetweenTwoDays
             date = date.Date;
             DateTime firstMonthDay = new DateTime(date.Year, date.Month, 1);
             DateTime firstMonthMonday = firstMonthDay.AddDays((DayOfWeek.Monday + 7 - firstMonthDay.DayOfWeek) % 7);
-            if (firstMonthMonday > date)
+       
+            if (firstMonthMonday < date)
             {
-                firstMonthDay = firstMonthDay.AddMonths(-1);
-                firstMonthMonday = firstMonthDay.AddDays((DayOfWeek.Monday + 7 - firstMonthDay.DayOfWeek) % 7);
+                int diff = (date - firstMonthMonday).Days;
+                if (diff < 7 && firstMonthDay != firstMonthMonday)
+                    return 2;
+                else
+                    return diff / 7 + 1;
             }
-            return (date - firstMonthMonday).Days / 7 + 1;
+            else
+            {
+                return 1;
+            }    
+            
         }
 
 
