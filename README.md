@@ -1,6 +1,7 @@
 # CountingBetweenTwoDays
 
 Calculates the number of weekdays in between two dates.
+	
 	● Weekdays are Monday, Tuesday, Wednesday, Thursday, Friday.
 	
 	● The returned count should not include either firstDate or secondDate - e.g. between Monday 07-Oct-2013 and Wednesday 09-Oct-2013 is one weekday.
