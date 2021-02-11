@@ -72,7 +72,7 @@ namespace CountingBetweenTwoDays.Tests
             {
                 new HolidayRule(25, 4),
                 new HolidayRule(1, 1, true),
-                new HolidayRule(DayOfWeek.Monday, 2, 6)
+                new HolidayRule(6, 2, DayOfWeek.Monday)
             };
 
             var firstDate = new DateTime(2011, 12, 29);
