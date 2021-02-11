@@ -7,15 +7,26 @@ namespace CountingBetweenTwoDays
     public static class DateTimeExtensions
     {
         /// <summary>
-        /// Determines if a given date is between a certain range.
+        /// Process Dates
         /// </summary>
-        /// <param name="date"></param>
-        /// <param name="startDate"></param>
-        /// <param name="endDate"></param>
+        /// <param name="firstDate"></param>
+        /// <param name="secondDate"></param>
+        /// <param name="processedFirstDate"></param>
+        /// <param name="processedSecondDate"></param>
         /// <returns></returns>
-        public static bool Between(this DateTime date, DateTime startDate, DateTime endDate)
+        public static bool DatesInit(DateTime firstDate, DateTime secondDate, out DateTime processedFirstDate, out DateTime processedSecondDate)
         {
-            return date.Ticks >= startDate.Ticks && date.Ticks <= endDate.Ticks;
+            processedFirstDate = firstDate.Date;
+            processedSecondDate = secondDate.Date;
+
+            if (processedFirstDate >= processedSecondDate)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
 
         /// <summary>
@@ -44,7 +55,7 @@ namespace CountingBetweenTwoDays
         /// </summary>
         /// <param name="date"></param>
         /// <returns></returns>
-        public static DateTime NextWorkday(this DateTime date)
+        public static DateTime NextWorkingDate(this DateTime date)
         {
             DateTime nextDay = date;
             while (!nextDay.IsWorkingDay())
@@ -55,6 +66,20 @@ namespace CountingBetweenTwoDays
             return nextDay;
         }
 
-        public static DateTime 
+        public static int GetWeekNumberOfMonth(this DateTime date)
+        {
+            date = date.Date;
+            DateTime firstMonthDay = new DateTime(date.Year, date.Month, 1);
+            DateTime firstMonthMonday = firstMonthDay.AddDays((DayOfWeek.Monday + 7 - firstMonthDay.DayOfWeek) % 7);
+            if (firstMonthMonday > date)
+            {
+                firstMonthDay = firstMonthDay.AddMonths(-1);
+                firstMonthMonday = firstMonthDay.AddDays((DayOfWeek.Monday + 7 - firstMonthDay.DayOfWeek) % 7);
+            }
+            return (date - firstMonthMonday).Days / 7 + 1;
+        }
+
+
+
     }
 }
