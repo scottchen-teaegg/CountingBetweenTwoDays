@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CountingBetweenTwoDays", "CountingBetweenTwoDays\CountingBetweenTwoDays.csproj", "{DCF0D810-8344-4851-8C41-7F01E35857DF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DCF0D810-8344-4851-8C41-7F01E35857DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCF0D810-8344-4851-8C41-7F01E35857DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCF0D810-8344-4851-8C41-7F01E35857DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCF0D810-8344-4851-8C41-7F01E35857DF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {23143A26-0CE1-4B83-95A1-A9B291810BDF}
+	EndGlobalSection
+EndGlobal
